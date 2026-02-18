@@ -75,36 +75,43 @@
 
 @media (max-width: 768px) {
     .galleryContainer {
-        gap: 1rem;
+        gap: 1.5rem;
+        width: 100vw;
+        margin-left: -1.5rem;
+        /* Counteract container padding to go full width */
+        margin-right: -1.5rem;
     }
 
     .mainImageWrapper {
         aspect-ratio: 1 / 1;
-        /* Keep square or slightly taller if needed */
+        /* Square for mobile is standard for product text */
         background: transparent;
-        /* Remove bg to look cleaner */
         border-radius: 0;
-        /* Full bleed feel if desired, or keep radius small */
+        width: 100%;
     }
 
     .mainImage {
         width: 100%;
         height: 100%;
         object-fit: contain;
+        transform: scale(0.9);
+        /* Slight breathing room within container */
     }
 
     .thumbnailList {
         justify-content: flex-start;
-        /* Align left for scrolling */
-        padding: 0 0.5rem;
-        /* Add horizontal padding for scroll snap feel */
-        gap: 0.75rem;
+        padding: 0 1.5rem;
+        /* Match container alignment */
+        gap: 1rem;
+        scroll-snap-type: x mandatory;
     }
 
     .thumbnailBtn {
-        width: 64px;
-        /* Slightly larger tap target than previous 60px if needed, or keep 60-70 */
-        height: 64px;
+        width: 72px;
+        height: 72px;
         flex-shrink: 0;
+        scroll-snap-align: start;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.05);
     }
 }
