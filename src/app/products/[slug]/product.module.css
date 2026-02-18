@@ -220,8 +220,10 @@
 
 @media (max-width: 768px) {
     .container {
-        padding: 6rem 1.5rem 8rem;
-        /* Add bottom padding for sticky CTA */
+        padding-top: calc(var(--header-total-height-mobile) + 2rem);
+        padding-bottom: 8rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
         display: block;
     }
 

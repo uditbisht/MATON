@@ -12,6 +12,12 @@
   /* Typography */
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
+
+  /* Layout */
+  --navbar-height-mobile: 72px;
+  --top-banner-height: 48px;
+  /* Slightly taller to accommodate text */
+  --header-total-height-mobile: calc(var(--navbar-height-mobile) + var(--top-banner-height));
 }
 
 * {

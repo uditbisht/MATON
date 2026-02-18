@@ -2,7 +2,15 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 8rem 1.5rem 4rem;
+    padding-top: calc(var(--header-total-height-mobile) + 3rem);
+    /* Extra breathing room on desktop too if needed, but mainly targeting clean separation */
     min-height: 60vh;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-top: calc(var(--header-total-height-mobile) + 2rem);
+    }
 }
 
 .title {

@@ -303,4 +303,16 @@
         padding: 0;
         /* Let navContainer handle padding */
     }
+
+    .navContainer {
+        height: var(--navbar-height-mobile);
+        padding: 0 1rem;
+    }
+
+    .topBanner {
+        min-height: var(--top-banner-height);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

@@ -40,6 +40,11 @@
 /* Card styles moved to ProductCard.module.css */
 
 @media (max-width: 768px) {
+    .container {
+        padding-top: calc(var(--header-total-height-mobile) + 2rem);
+        padding-bottom: 4rem;
+    }
+
     .grid {
         gap: 2rem;
     }
