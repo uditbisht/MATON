@@ -1,0 +1,110 @@
+.galleryContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.mainImageWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainImage {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnailList {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0.5rem 0.25rem;
+    /* Add padding to prevent clipping of borders/shadows */
+    scrollbar-width: none;
+    /* Firefox */
+    align-items: center;
+    /* Vertical alignment */
+}
+
+.thumbnailList::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.thumbnailBtn {
+    border: 2px solid transparent;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    /* Crucial: prevent shrinking */
+    width: 80px;
+    /* Explicit width */
+    height: 80px;
+    /* Explicit height */
+}
+
+.thumbnailBtn.active {
+    border-color: var(--color-accent);
+}
+
+.thumbnailWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.thumbnailImage {
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .galleryContainer {
+        gap: 1rem;
+    }
+
+    .mainImageWrapper {
+        aspect-ratio: 1 / 1;
+        /* Keep square or slightly taller if needed */
+        background: transparent;
+        /* Remove bg to look cleaner */
+        border-radius: 0;
+        /* Full bleed feel if desired, or keep radius small */
+    }
+
+    .mainImage {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .thumbnailList {
+        justify-content: flex-start;
+        /* Align left for scrolling */
+        padding: 0 0.5rem;
+        /* Add horizontal padding for scroll snap feel */
+        gap: 0.75rem;
+    }
+
+    .thumbnailBtn {
+        width: 64px;
+        /* Slightly larger tap target than previous 60px if needed, or keep 60-70 */
+        height: 64px;
+        flex-shrink: 0;
+    }
+}

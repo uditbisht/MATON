@@ -1,0 +1,252 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 1.5rem 4rem;
+    min-height: 60vh;
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.complimentaryBadge {
+    display: inline-block;
+    background-color: #262626;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    margin-top: 0.25rem;
+    letter-spacing: 0.02em;
+    width: fit-content;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 3rem;
+}
+
+/* Cart Items List */
+.cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cartItem {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.itemImageContainer {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.itemImage {
+    object-fit: cover;
+}
+
+.itemDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.itemName {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.itemPrice {
+    color: #666;
+    font-size: 1rem;
+}
+
+.quantityControls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.qtyButton {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.qtyButton:hover {
+    background: #f0f0f0;
+    border-color: #ccc;
+}
+
+.quantity {
+    font-weight: 500;
+    min-width: 20px;
+    text-align: center;
+}
+
+.itemTotal {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.totalPrice {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.removeButton {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    padding: 0;
+}
+
+.removeButton:hover {
+    color: #cc0000;
+}
+
+/* Summary Section */
+.summary {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.summaryTitle {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.summaryRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.totalRow {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #ddd;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.checkoutButton {
+    width: 100%;
+    padding: 1rem;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.checkoutButton:hover {
+    background: #333;
+}
+
+/* Empty State */
+.emptyState {
+    text-align: center;
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.emptyText {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.continueButton {
+    padding: 1rem 2rem;
+    background: #1a1a1a;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.continueButton:hover {
+    background: #333;
+}
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .cartItem {
+        grid-template-columns: 80px 1fr;
+        grid-template-areas:
+            "image details"
+            "image total";
+        gap: 1rem;
+    }
+
+    .itemImageContainer {
+        grid-area: image;
+        width: 80px;
+        height: 80px;
+    }
+
+    .itemDetails {
+        grid-area: details;
+    }
+
+    .itemTotal {
+        grid-area: total;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+}

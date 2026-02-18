@@ -1,0 +1,242 @@
+.container {
+    height: 200vh;
+    /* Allows enough scroll distance for the animation */
+    position: relative;
+    z-index: 1;
+    background-color: var(--color-bg-dark);
+}
+
+/* The sticky wrapper that stays fixed in view */
+.hero {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--color-bg-dark);
+}
+
+.sequenceWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient to ensure text readability on left and right */
+    background: linear-gradient(90deg,
+            rgba(11, 26, 18, 0.7) 0%,
+            rgba(11, 26, 18, 0.3) 40%,
+            rgba(11, 26, 18, 0.3) 60%,
+            rgba(11, 26, 18, 0.7) 100%);
+    z-index: 1;
+}
+
+.contentRow {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+/* Left Column: Text */
+.textContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.5rem;
+    animation: fadeInUp 1s ease-out;
+    max-width: 600px;
+}
+
+.heroTitle {
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+}
+
+.devanagari {
+    font-family: var(--font-rozha), serif;
+    /* Devanagari font */
+    font-size: clamp(5rem, 10vw, 8rem);
+    color: #fff;
+    font-weight: 400;
+}
+
+.english {
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 8vw, 6.5rem);
+    /* Slightly smaller to visually balance */
+    color: #fff;
+    font-weight: 700;
+    margin-left: -0.05em;
+    /* Tweak kerning to blend them */
+}
+
+.headline {
+    /* Renamed from title to avoid confusion, though could keep generic */
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 90%;
+}
+
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-accent);
+    /* Lime/Green accent */
+    color: var(--color-bg-dark);
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+.ctaButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(185, 255, 61, 0.3);
+    background-color: #c4ff5c;
+}
+
+/* Right Column: Scroll Arrow */
+.scrollIndicator {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    padding-right: 2rem;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.scrollArrow {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.scrollArrow:hover {
+    opacity: 1;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        height: 150vh;
+        /* Shorter scroll on mobile */
+    }
+
+    .contentRow {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        padding-top: 4rem;
+        /* Add some top padding */
+    }
+
+    .textContent {
+        align-items: center;
+        text-align: center;
+        margin-top: 0;
+        /* Handled by padding now */
+        width: 100%;
+    }
+
+    .japaneseTitle {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .headline {
+        font-size: 1.75rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .ctaButton {
+        width: 100%;
+        /* Full width on mobile */
+        max-width: 300px;
+        /* But constrained */
+    }
+
+    .scrollIndicator {
+        display: none;
+        /* Hide scroll arrow on mobile to save space/reduce clutter */
+    }
+}

@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
+    padding: 8rem 2rem 2rem;
+    background: var(--color-bg-light);
+}
+
+.card {
+    background: white;
+    padding: 4rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    width: 100%;
+}
+
+.iconWrapper {
+    width: 80px;
+    height: 80px;
+    background: rgba(185, 255, 61, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    color: var(--color-bg-dark);
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--color-bg-dark);
+    margin-bottom: 1rem;
+}
+
+.message {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.orderId {
+    font-weight: 600;
+    color: var(--color-bg-dark);
+    background: rgba(0, 0, 0, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.continueButton {
+    background: var(--color-bg-dark);
+    color: var(--color-accent);
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.continueButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

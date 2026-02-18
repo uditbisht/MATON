@@ -1,0 +1,16 @@
+.banner {
+    background-color: var(--color-accent);
+    color: var(--color-bg-dark);
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 101;
+    width: 100%;
+}
+
+.bannerText {
+    margin: 0;
+}

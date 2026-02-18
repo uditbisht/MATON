@@ -1,0 +1,253 @@
+.section {
+    padding: 8rem 0;
+    background-color: var(--color-bg-light);
+}
+
+.headline {
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    color: var(--color-bg-dark);
+    margin-bottom: 4rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+/* Link Wrappers */
+.cardLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.featuredLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    grid-column: 2;
+    /* Ensure it stays in the right column */
+}
+
+/* Left Column: Stacked Cards */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.miniCard {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    border: 1px solid transparent;
+    height: 100%;
+    /* Fill link height */
+}
+
+.miniCard:hover,
+.active .miniCard {
+    /* Adjusted for when link wraps div */
+    transform: translateX(5px) translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.miniCardImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #f5f5f5;
+}
+
+.miniCardInfo h4 {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-bg-dark);
+}
+
+.miniCardInfo p {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Right Column: Featured Product */
+.featuredCard {
+    background: white;
+    border-radius: 2rem;
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+}
+
+.featuredCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+.featuredContent {
+    flex: 1;
+    z-index: 2;
+}
+
+.jpTitle {
+    font-family: "Noto Sans JP", sans-serif;
+    color: var(--color-bg-dark);
+    opacity: 0.5;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.featuredTitle {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--color-bg-dark);
+}
+
+.featuredDesc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 400px;
+}
+
+.priceRow {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.price {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--color-bg-dark);
+}
+
+.weight {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.featuredImageWrapper {
+    width: 400px;
+    height: 400px;
+    position: relative;
+}
+
+.featuredImage {
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.featuredCard:hover .featuredImage {
+    transform: scale(1.08) rotate(3deg);
+}
+
+/* Bottom Grid for Tools */
+.toolsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.toolCard {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    height: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+}
+
+.toolCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.toolImageWrapper {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.toolImage {
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.toolCard:hover .toolImage {
+    transform: scale(1.05);
+}
+
+.toolTitle {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-bg-dark);
+}
+
+.toolPrice {
+    font-weight: 600;
+    color: var(--color-bg-dark);
+}
+
+.exploreBtnWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featuredLink {
+        grid-column: 1;
+    }
+
+    .featuredCard {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .featuredImageWrapper {
+        width: 250px;
+        height: 250px;
+    }
+
+    .toolsGrid {
+        grid-template-columns: 1fr;
+    }
+}
